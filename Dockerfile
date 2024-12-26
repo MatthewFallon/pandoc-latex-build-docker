@@ -8,6 +8,6 @@ RUN mkdir -p /root/.local/share/pandoc/templates && \
     tar -xzf /tmp/eisvogel/eisvogel.tar.gz -C /tmp/eisvogel && \
     mv /tmp/eisvogel/eisvogel.latex /root/.local/share/pandoc/templates/ && \
     rm -rf /tmp/eisvogel
-COPY docker-entrypoint.sh /usr/bin/
+COPY --chmod=755 docker-entrypoint.sh /usr/bin/
 
 ENTRYPOINT ["/bin/sh", "/usr/bin/docker-entrypoint.sh"]
